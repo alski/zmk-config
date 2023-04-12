@@ -9,9 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LOWER   1
-#define RAISE   2
-#define GAME    3
+#define GAME    1
+#define LOWER   2
+#define RAISE   3
 
 / {
     behaviors {
@@ -62,6 +62,22 @@
                   &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp LALT
                         >;
                 };
+
+                   game_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ; : | ' @  |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | , < | . > | / ? | ESC  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                  &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp LALT
+                        >;
+                }; 
+
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  F1  | F2  | F3  | F4  | F5  | F6  |   | F7  | F8  | F9  | F10 | F11 | F12  |
@@ -89,20 +105,7 @@
                     	                     &kp LGUI &trans       &kp SPACE       &kp RET   &trans    &kp RALT
                         >;
                 };
-
-                game_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ; : | ' @  |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | , < | . > | / ? | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp LALT
-                        >;
-                };
+            
 
 //             unused_layer {
 // -----------------------------------------------------------------------------------------
@@ -111,10 +114,10 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    |     |     |     |   | ENT | BKSP| DEL |
 //                        bindings = <
-//   &trans  &trans &trans &trans &trans &trans   &trans &trans  &trans &trans &trans &trans
+//   &trans  &trans &trans &trans &trans &trans            &trans &trans  &trans &trans &trans &trans
 //   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-//   &trans &trans   &trans &trans   &trans   &trans      &trans &trans   &trans &trans   &trans   &trans
-//                    	     &trans &trans &trans   &kp RET   &kp BKSP &kp DEL
+//   &trans &trans   &trans &trans   &trans   &trans       &trans &trans   &trans &trans   &trans   &trans
+//                    	     &trans &trans &trans          &kp RET   &kp BKSP &kp DEL
 //                      >;
 //              };
         };
