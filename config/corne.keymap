@@ -14,27 +14,7 @@
 #define RAISE   3
 
 / {
-    behaviors {
-        lh_pht: left_hand_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <7 8 9 10 11 12>;    // <---[[right-hand keys]]
-        };
-        rh_pht: right_hand_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 6>;    // <---[[right-hand keys]]
-        };
+    behaviors {     
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -51,16 +31,15 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ; : | ' @  |
+// |  WIN |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ; : | ' @  |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | , < | . > | / ? | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                    | CTRL| LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-// &kp LCTRL &lh_pht LGUI A    &lh_pht LALT S    &lh_pht LCTRL D    &lh_pht LSHFT F &kp G   &kp H &rh_pht LSHFT J  &rh_pht LCTRL K     &rh_pht LALT L   &rh_pht LGUI SEMI &kp SQT
-   &kp LCTRL &hm LGUI A    &hm LALT S    &hm LCTRL D    &hm LSHFT F &kp G   &kp H &hm LSHFT J  &hm LCTRL K     &hm LALT L   &hm LGUI SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp LALT
-                        >;
+   &kp TAB   &kp Q      &kp W      &kp E       &kp R       &kp T       &kp Y   &kp U       &kp I        &kp O      &kp P         &kp BSPC
+   &kp LGUI  &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G       &kp H   &hm LSHFT J &hm LCTRL K  &hm LALT L &hm LGUI SEMI &kp SQT
+   &kp LSHFT &kp Z      &kp X      &kp C       &kp V       &kp B       &kp N   &kp M       &kp COMMA    &kp DOT    &kp FSLH      &kp ESC
+                                   &kp LCTRL   &mo LOWER   &kp SPACE   &kp RET &mo RAISE   &kp LALT
+                     >;
                 };
 
                    game_layer {
@@ -88,7 +67,7 @@
    &kp F1    &kp F2   &kp F3  &kp F4   &kp F5    &kp F6      &kp F7  &kp F8    &kp F9    &kp F10  &kp F11  &kp F12
    &kp HOME  &kp LEFT &kp UP  &kp DOWN &kp RIGHT &kp END     &trans  &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &trans
    &kp LSHFT &kp N1   &kp N2  &kp N3   &kp N4    &kp N5      &kp N6  &kp N7    &kp N8    &kp N9   &kp N0   &trans
-                          	  &kp LGUI &trans    &kp SPACE   &kp RET &kp BKSP  &kp DEL
+                          	  &trans   &trans    &trans      &trans  &kp BKSP  &kp DEL
                         >;
                 };
 
@@ -97,12 +76,12 @@
 // |  TAB |  !  |  "  |  #  |  $  |  %   |   |  ^  |  &  |  *  |  (  |  )  | DEL |
 // | CAPS |     |     |     | BT_1| BT_0 |   |  -  |  =  |  [  |  ]  |  `  |  #  |
 // | SHFT |  \  |  |  |     | GAME|BT_CLR|   |  _  |  +  |  {  |  }  |  ~  |  ¬  |
-//                    | GUI |     | SPC  |   | ENT |     | ALT |
+//                    |     |     |      |   |     |     |R-ALT|
                         bindings = <
    &kp TAB    &kp EXCL             &kp AT    &kp HASH &kp DLLR     &kp PRCNT       &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR  &kp DELETE
    &caps_word &trans               &trans    &trans   &bt BT_SEL 1 &bt BT_SEL 0    &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp GRAVE &kp BSLH
    &kp LSHFT  &kp NON_US_BACKSLASH &kp PIPE2 &trans   &tog GAME    &bt BT_CLR      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE  &kp TILDE
-                    	                     &kp LGUI &trans       &kp SPACE       &kp RET   &trans    &kp RALT
+                    	                     &trans   &trans       &trans         &trans     &trans    &kp RALT
                         >;
                 };
             
@@ -117,7 +96,7 @@
 //   &trans  &trans &trans &trans &trans &trans            &trans &trans  &trans &trans &trans &trans
 //   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
 //   &trans &trans   &trans &trans   &trans   &trans       &trans &trans   &trans &trans   &trans   &trans
-//                    	     &trans &trans &trans          &kp RET   &kp BKSP &kp DEL
+//                    	     &trans &trans &trans          &trans     &trans   &trans  
 //                      >;
 //              };
         };
