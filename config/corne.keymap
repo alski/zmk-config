@@ -80,10 +80,10 @@
 
         autoshift_layer {
             bindings = <
-&trans  &as Q Q  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans    &trans  &trans  &trans
+&trans   &as LS(Q) Q  &as LS(W) W  &as LS(E) E  &as LS(R) R  &as LS(T) T    &as LS(Y) Y  &as LS(U) U  &as LS(I) I  &as LS(O) O  &as LS(P) P  &trans
+&trans   &as LS(A) A  &as LS(S) S  &as LS(D) D  &as LS(F) F  &as LS(G) G    &as LS(H) H  &as LS(J) J  &as LS(K) K  &as LS(L) L  &kp SEMI     &trans
+&trans   &as LS(Z) Z  &as LS(X) X  &as LS(C) C  &as LS(V) V  &as LS(B) B    &as LS(N) N  &as LS(M) M  &trans       &trans       &trans       &trans
+                                   &trans       &trans       &trans         &trans       &trans       &trans
             >;
 
             label = "AutoShift";
@@ -97,10 +97,10 @@
             //                    | GUI |     | SPC |   | ENT | BKSP| DEL |
 
             bindings = <
-   &kp F1    &kp F2  &kp F3    &kp F4     &kp F5   &kp F6    &kp F7     &kp F8     &kp F9   &kp F10   &kp F11  &kp F12
- &kp HOME  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp END    &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI   &trans
-&kp LSHFT    &kp N1  &kp N2    &kp N3     &kp N4   &kp N5    &kp N6     &kp N7     &kp N8    &kp N9    &kp N0   &trans
-                               &trans     &trans   &trans    &trans   &kp BKSP    &kp DEL
+   &kp F1  &kp F2  &kp F3    &kp F4     &kp F5    &kp F6    &kp F7   &kp F8     &kp F9    &kp F10   &kp F11  &kp F12
+ &kp HOME  &kp LEFT  &kp UP    &kp DOWN   &kp RIGHT &kp END   &trans   &kp LSHFT  &kp LCTRL &kp LALT  &kp LGUI &trans
+&kp LSHFT  &kp N1  &kp N2    &kp N3     &kp N4    &kp N5    &kp N6   &kp N7     &kp N8    &kp N9    &kp N0   &trans
+                               &trans     &trans    &trans    &trans   &kp BKSP   &kp DEL
             >;
 
             label = "Lower";
@@ -114,10 +114,10 @@
             //                    |     |     |      |   |     |     |R-ALT|
 
             bindings = <
-   &kp TAB              &kp EXCL     &kp AT  &kp HASH      &kp DLLR     &kp PRCNT    &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR   &kp RPAR  &kp DELETE
-&caps_word                &trans     &trans    &trans  &bt BT_SEL 1  &bt BT_SEL 0    &kp MINUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp GRAVE    &kp BSLH
- &kp LSHFT  &kp NON_US_BACKSLASH  &kp PIPE2    &trans     &tog GAME    &bt BT_CLR    &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC   &kp PIPE   &kp TILDE
-                                               &trans        &trans        &trans       &trans     &trans         &kp RALT
+   &kp TAB              &kp EXCL     &kp AT  &kp HASH          &kp DLLR     &kp PRCNT    &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR   &kp RPAR  &kp DELETE
+&caps_word                &trans     &trans    &trans          &bt BT_SEL 1 &bt BT_SEL 0    &kp MINUS  &kp EQUAL         &kp LBKT  &kp RBKT  &kp GRAVE    &kp BSLH
+ &kp LSHFT  &kp NON_US_BACKSLASH  &kp PIPE2    &tog AUTOSHIFT  &tog GAME    &bt BT_CLR    &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC   &kp PIPE   &kp TILDE
+                                               &trans          &trans        &trans       &trans     &trans         &kp RALT
             >;
 
             label = "Raise";
