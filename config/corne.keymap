@@ -72,7 +72,7 @@
 &kp ESCAPE  &kp Q       &kp W       &kp E        &kp R        &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P          &trans
 &kp TAB     &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G        &kp H    &hm LSHFT J  &hm LCTRL K  &hm LALT L  &hm LGUI SEMI  &kp SQT
 &trans      &kp Z       &kp X       &kp C        &kp V        &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp PRINTSCREEN
-                                    &mo 7        &mo LOWER    &kp SPACE    &kp RET  &mo RAISE    &kp LALT
+                                    &mo 7        &mo LOWER    &kp SPACE    &kp RET  &mo RAISE    &mo 7
             >;
 
             label = "Home Row Mods";
@@ -86,10 +86,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E       &kp R      &kp T        &kp Y    &kp U      &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D       &kp F      &kp G        &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C       &kp V      &kp B        &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp ESCAPE  &mo LOWER  &kp SPACE    &kp RET  &mo RAISE  &kp LALT
+&kp TAB    &kp Q  &kp W  &kp E       &kp R   &kp T        &kp Y    &kp U   &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D       &kp F   &kp G        &kp H    &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C       &kp V   &kp B        &kp N    &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                         &kp ESCAPE  &trans  &kp SPACE    &kp RET  &trans  &trans
             >;
 
             label = "Game";
