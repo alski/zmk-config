@@ -7,4 +7,11 @@ My slowly evolving keyboard layout
     - Left hand home row cursors
 - Raise for symbols
 
-![My current layout](keyboard-layout.png)
+![Default](0.Default.png)
+![Game](1.Game.png)
+![AutoShift](2.AutoShift.png)
+![Lower](3.Lower.png)
+![Raise](4.Raise.png)
+![ShiftRaise](5.ShiftRaise.png)
+![CtrlRaise](6.CtrlRaise.png)
+![Admin](7.Admin.png)
