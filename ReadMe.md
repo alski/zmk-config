@@ -1,3 +1,4 @@
+[![.github/workflows/build.yml](https://github.com/alski/zmk-config/actions/workflows/build.yml/badge.svg)](https://github.com/alski/zmk-config/actions/workflows/build.yml)
 # zmk-config
 My slowly evolving keyboard layout
 - Home row mods on by default but with a layer without
